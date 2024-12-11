@@ -22,3 +22,32 @@ public class Solution {
         
     }
 }
+
+
+/*      Another way but it takes O(n^2) time complexity
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        sc.close();
+        
+        // Initialize an empty string for reversed version
+        String reversed = "";
+        
+        // Loop through the string from end to start
+        for (int i = s.length() - 1; i >= 0; i--) {
+            reversed += s.charAt(i);  // Concatenate each character in reverse order
+        }
+        
+        // Check if the original string is equal to the reversed string
+        if (s.equals(reversed)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
+
+
+*/
