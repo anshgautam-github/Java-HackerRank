@@ -21,33 +21,40 @@ public class Solution {
         }
         
     }
-}
+ }
+// ✅ Time Complexity: O(n), because reversing a string takes O(n), and comparing takes another O(n).
+// ✅ Space Complexity: O(n), due to storing the reversed string.
 
 
 /*      Another way but it takes O(n^2) time complexity
 
-public class Solution {
+import java.util.Scanner;
+
+public class PalindromeCheck {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        sc.close();
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        scanner.close();
         
-        // Initialize an empty string for reversed version
-        String reversed = "";
+        int left = 0;
+        int right = str.length() - 1;
+        boolean isPalindrome = true;
         
-        // Loop through the string from end to start
-        for (int i = s.length() - 1; i >= 0; i--) {
-            reversed += s.charAt(i);  // Concatenate each character in reverse order
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                isPalindrome = false;
+                break;
+            }
+            left++;
+            right--;
         }
-        
-        // Check if the original string is equal to the reversed string
-        if (s.equals(reversed)) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
+
+        System.out.println(isPalindrome ? "Yes" : "No");
     }
 }
+
+Time Complexity: O(n/2) ≈ O(n), as we only iterate half the string.
+✅ Space Complexity: O(1), as we don’t store extra strings.
 
 
 */
